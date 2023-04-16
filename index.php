@@ -75,9 +75,9 @@ include($_SERVER['DOCUMENT_ROOT'].'/include/ss.php');
         <tr onclick="location.href='/look.php?idx=<?php echo $row['idx'];?>'">
           <td width="70"><?php echo $row['idx']; ?></td>
           <td width="130"><?php echo $row['titlet']; ?></td>
-          <td width="400"><?php echo $row['textt']?></td>
-          <td width="120"><?php echo $row['namet']?></td>
-          <td width="100"><?php echo $row['dayt']?></td>
+          <td width="400"><?php echo $row['textt']; ?></td>
+          <td width="120"><?php echo $row['namet']; ?></td>
+          <td width="100"><?php echo $row['dayt']; ?></td>
           <td width="100"><?php echo $row['lookt']; ?></td>
         </tr>
       </tbody>

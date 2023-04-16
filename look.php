@@ -49,6 +49,10 @@ include($_SERVER['DOCUMENT_ROOT'].'/include/dbinfo.php');
     <h2><?php echo $row['titlet'];?></h2>
     <div><h3><?php echo $row['textt'];?></h3></div>
     
+
+    <tr onclick="location.href='/look.php?idx=<?php echo $row['idx'];?>'">
+
+    
     <button type="button" onclick="location.href='index.php'">목록</button>
     <button type="button" onclick="location.href='update.php'">수정</button>
     <button type="button" onclick="location.href='delete.php'">삭제</button>

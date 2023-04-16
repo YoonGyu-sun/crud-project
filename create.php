@@ -1,4 +1,6 @@
-
+<?php
+   include($_SERVER['DOCUMENT_ROOT'].'/include/ss.php');
+?>
 <!doctype html>
 <head>
 <meta charset="UTF-8">
@@ -73,7 +75,7 @@
                     <div class="wi_line"></div>
                     
                     <div id="in_name">
-                        <textarea name="namet" id="uname" rows="1" cols="55" placeholder="글쓴이" maxlength="100" required></textarea>
+                        <textarea name="namet" id="uname" rows="1" cols="55" value="<?php echo $_SESSION['loginid']; ?>" maxlength="100" readonly><?php echo $_SESSION['loginid']; ?></textarea>
                     </div>
 
                     <div class="wi_line"></div>

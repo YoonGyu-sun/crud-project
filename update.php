@@ -1,12 +1,16 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/include/dbinfo.php');
-        $stmt = $mysqli->stmt_init();
+    include($_SERVER['DOCUMENT_ROOT'].'/include/ss.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/include/dbinfo.php');
+    $stmt = $mysqli->stmt_init();
         $sql = "SELECT * FROM boardt WHERE idx={$_GET['idx']}";
 
         $result = $mysqli->query($sql);
         $row=$result->fetch_array();
 
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -45,19 +49,20 @@ include($_SERVER['DOCUMENT_ROOT'].'/include/dbinfo.php');
         <div id ="static">조회: <?php echo $row['lookt'];?>&nbsp;&nbsp;</div>
     
     <br>
+        
+    <form action="updating.php?idx=<?php echo $_GET['idx']?>" method="get">
     
-    <h2><?php echo $row['titlet'];?></h2>
-    <div><h3><?php echo $row['textt'];?></h3></div>
-    
+    <textarea name="udtitle" placeholder="<?php echo $row['titlet'];?>"></textarea>
+    <textarea name="udtext" placeholder="<?php echo $row['textt'];?>"></textarea>
+        <input type="submit" value="전송"></input>
+    </form>
+
 
     <tr onclick="location.href='/look.php?idx=<?php echo $row['idx'];?>'">
 
     
     <button type="button" onclick="location.href='index.php'">목록</button>
-    <button type="button" onclick="location.href='update.php?idx=<?php echo $row['idx'];?>'">수정</button>
-    <button type="button" onclick="location.href='delete.php?idx=<?php echo $row['idx'];?>'">삭제</button>
-   
-
+    
 
 </body>
 </html>
